@@ -1,0 +1,15 @@
+version: '3.0'
+
+services:
+  url_shortener:
+    container_name: url_shortener
+    build:
+      dockerfile: dockerfile
+    image: url_shortener:latest
+    ports:
+      - "9090:9090"
+    networks:
+      - custom
+networks:
+  custom:
+    driver: bridge
